@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squirrel Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .fact-container {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .fact-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .fact-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="factContainer" class="fact-container">
+        <p id="factText">Click the button to see a squirrel fact!</p>
+    </div>
+    <button id="factButton" class="fact-button">Generate Random Fact</button>
+
+    <script>
+        document.getElementById('factButton').addEventListener('click', function() {
+            const facts = [
+                "Squirrels belong to the family Sciuridae, which includes small or medium-size rodents.",
+                "The typical diet of a squirrel includes nuts, seeds, fruits, and green vegetation.",
+                "Squirrels are known for their bushy tails, which they use for balance and as a blanket in cold weather.",
+                "There are more than 200 different species of squirrels around the world.",
+                "Squirrels have very sharp teeth that continue to grow throughout their lives, allowing them to gnaw on hard objects without wearing them down.",
+                "Some species of squirrels, like the flying squirrel, have a membrane between their limbs that allows them to glide through the air.",
+                "Squirrels are excellent climbers and can descend a tree head-first by rotating their ankles 180 degrees.",
+                "Squirrels communicate through various sounds, including chirps and squeaks, as well as through tail movements.",
+                "In preparation for winter, squirrels are known to stockpile food in numerous caches. They have an excellent memory for locating these caches later.",
+                "Squirrels play a crucial role in forest regeneration as they inadvertently plant seeds and nuts that they forget to retrieve."
+            ];
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            document.getElementById('factText').textContent = randomFact;
+        });
+    </script>
+</body>
+</html>
